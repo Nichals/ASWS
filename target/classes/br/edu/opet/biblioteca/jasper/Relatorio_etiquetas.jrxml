@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-04T20:10:42 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_etiquetas" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eac7f807-b02f-449c-a7c4-d91bf689bd81">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Oracle"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM TBL_PRODUTO]]>
+	</queryString>
+	<field name="idProduto" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="valor" class="java.lang.Float"/>
+	<field name="tamanho" class="java.lang.String"/>
+	<field name="genero" class="java.lang.String"/>
+	<field name="descricao" class="java.lang.String"/>
+	<field name="diretorioImagem" class="java.lang.String"/>
+	<field name="status" class="java.lang.Integer"/>
+	<field name="quantidadeAluguel" class="java.lang.Integer"/>
+	<field name="dataCriacao" class="java.math.BigDecimal"/>
+	<field name="operadorCriador" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="30" width="455" height="30" uuid="45f7a400-302d-4dc5-9a11-bd9e50631f7c"/>
+				<textElement>
+					<font fontName="Arial" size="20"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produtos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-20" width="120" height="120" uuid="24908a38-8f1d-45b6-9702-adc91a00a36e"/>
+				<imageExpression><![CDATA["../LogoAlugueService.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="60" width="100" height="30" uuid="0961ca09-d71f-49cd-8bbe-91a354911c8f"/>
+				<text><![CDATA[ETIQUETAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="92" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-21" y="0" width="595" height="92" uuid="fd39d2df-7d32-43bd-9966-27eef2673c3e"/>
+			</rectangle>
+			<textField>
+				<reportElement positionType="Float" x="85" y="50" width="110" height="30" uuid="e790d43f-4842-4cf7-9089-2f6dbb1e52c8"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="14" width="30" height="30" uuid="26ebbf46-4eb4-46a6-808e-373ef9db8b6e"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[ID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="355" y="14" width="30" height="30" uuid="051ffa2e-fb92-4b72-a3f4-ba08038813ec"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tamanho}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="55" y="14" width="160" height="30" uuid="429c60ea-f681-44cf-9e93-01b2d4306d07">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idProduto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.##;¤-#,##0.##">
+				<reportElement x="323" y="51" width="90" height="30" uuid="67d4fbf9-bd30-4b87-b03d-f57405dbf651"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="445" y="0" width="129" height="92" uuid="42f8a930-6897-4116-97f9-772ad553f11b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="273" y="51" width="50" height="30" uuid="49f8f711-2bae-4035-bd02-56ed08b1eeea"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="50" width="56" height="30" uuid="b882c074-6db2-4832-a0fa-6cd4a5d6d04a"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="-10" y="39" width="15" height="15" backcolor="#000000" uuid="3922e2cd-cfac-4be2-bef7-5f164a287ef8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="270" y="14" width="90" height="30" uuid="e73a774d-3545-4774-a2d9-f2d6eac25b91"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Tamanho:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="452" y="2" width="117" height="89" forecolor="#000000" uuid="5d679983-d786-4678-be46-a97aa44c56e9">
+					<property name="com.jaspersoft.studio.unit.margin" value="pixel"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="1">
+					<jr:codeExpression><![CDATA[$F{idProduto}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="179" y="1" width="100" height="30" uuid="c6c61bc0-c61a-4ba7-b047-8fb093fca05b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="279" y="1" width="100" height="30" uuid="6e354889-1f39-4b29-b0fe-b211fedc2cf3"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

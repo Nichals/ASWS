@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "=//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- Dialeto e Driver para Oracle -->
+  <property name="dialect">org.hibernate.dialect.OracleDialect</property>
+  <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  
+  <!-- Detalhes do Banco de Dados-->
+  <property name="connection.username">alugueservicews</property>
+  <property name="connection.password">alugueService_1</property>
+  <property name="connection.url">jdbc:oracle:thin:@//129.157.176.250:1521/ORCL.brasws2.oraclecloud.internal</property>
+  <property name="connection.pool_size">1</property>
+  <property name="hibernate.default_schema">alugueservicews</property>
+  <property name="hibernate.current_session_context_class">thread</property>
+  
+  <!-- Propriedades Adicionais -->
+  <property name="show_sql">true</property>
+  <property name="hbm2ddl.auto">validate</property>
+  
+  <!-- Mapeamento das Classes -->
+  <mapping class="br.com.alugueservice.model.Cliente"/>
+  <mapping class="br.com.alugueservice.model.Aluguel"/>
+  <mapping class="br.com.alugueservice.model.Configuracao"/>
+  <mapping class="br.com.alugueservice.model.Cupom"/>
+  <mapping class="br.com.alugueservice.model.Endereco"/>
+  <mapping class="br.com.alugueservice.model.Operador"/>
+  <mapping class="br.com.alugueservice.model.PreAluguel"/>
+  <mapping class="br.com.alugueservice.model.Produto"/>
+ </session-factory>
+</hibernate-configuration>
