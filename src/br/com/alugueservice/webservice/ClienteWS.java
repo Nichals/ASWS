@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import br.com.alugueservice.controller.ClienteController;
 import br.com.alugueservice.dto.ClienteDTO;
 import br.com.alugueservice.model.Cliente;
+import br.com.alugueservice.pwai.email.send.SendMail1;
 
 @Path("/Cliente")
 public class ClienteWS
@@ -87,4 +88,22 @@ public class ClienteWS
         // Retornando o resultado
         return tDto;
     }
+
+    @PUT
+    @Path("/Email/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ClienteDTO email(@PathParam("id") int pId)
+    {
+        ClienteDTO tDto = ClienteController.recuperar(pId);
+        SendMail1 email = new SendMail1();
+        if (tDto.isOk())
+        {
+            if (!email.enviarEmail(tDto.getCliente()))
+            {
+                return new ClienteDTO(false,"Erro ao enviar email para o cliente.");
+            }
+        }
+        return tDto;
+    }
+
 }

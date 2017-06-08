@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alugueservice.biblioteca.jasper.JasperFactory;
 import br.com.alugueservice.controller.ProdutoController;
 import br.com.alugueservice.dto.ProdutoDTO;
 import br.com.alugueservice.model.Produto;
 import br.com.alugueservice.util.HibernateUtil;
-import br.edu.opet.biblioteca.jasper.JasperFactory;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;

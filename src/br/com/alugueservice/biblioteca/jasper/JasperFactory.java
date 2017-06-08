@@ -1,4 +1,4 @@
-package br.edu.opet.biblioteca.jasper;
+package br.com.alugueservice.biblioteca.jasper;
 
 import java.io.IOException;
 import java.io.InputStream;
